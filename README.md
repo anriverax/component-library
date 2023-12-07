@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+npm install --save-dev --save-exact prettier
 
-## Getting Started
+npm install --save-dev eslint-plugin-prettier eslint-config-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-import
+https://www.tailwind-variants.org/
+npm install tailwind-variants
 
-First, run the development server:
+https://www.framer.com/motion/introduction/##installation
+npm install framer-motion
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+https://www.npmjs.com/package/react-remove-scroll
+npm i react-remove-scroll
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+https://uiwjs.github.io/react-codemirror/#/
+npm install @uiw/react-codemirror --save
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+https://www.npmjs.com/package/clipboard
+npm i clipboard
+npm i @codemirror/lang-javascript
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://nextjs.org/docs/app/building-your-application/upgrading/codemods#use-viewport-export
+npx @next/codemod@latest metadata-to-viewport-export .
