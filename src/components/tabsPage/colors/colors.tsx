@@ -13,7 +13,7 @@ type TabColor = "primary" | "secondary" | "info" | "success" | "warning" | "dang
  * // Usage in another component
  * <TabsColors />
  */
-const TabsColors: React.FC = () => {
+const TabsColors = () => {
   /**
    * List of available tab colors.
    *

@@ -1,19 +1,14 @@
-import React, { FC } from "react";
+import React, { ReactNode } from "react";
 import { Tabs, Tab } from "@/lib/components/tab";
 import { GalleryIcon, MusicIcon, VideoIcon } from "@/lib/components/icons";
 import Content from "@/components/layout/content";
 
 /**
  * CustomTabContent component to render the content of each custom tab.
- *
  * @param {string} title - The title of the tab.
- * @param {React.ReactNode} icon - The icon for the tab.
  * @returns {JSX.Element} - The rendered CustomTabContent component.
  */
-const CustomTabContent: FC<{ title: string; icon: React.ReactNode }> = ({
-  title,
-  icon
-}): JSX.Element => (
+const CustomTabContent = ({ title, icon }: { title: string; icon: ReactNode }): JSX.Element => (
   <div className="flex items-center space-x-2">
     {icon}
     <span>{title}</span>
@@ -25,7 +20,7 @@ const CustomTabContent: FC<{ title: string; icon: React.ReactNode }> = ({
  *
  * @returns {JSX.Element} - The rendered TabsCustomStyle component.
  */
-const TabsCustomStyle: FC = (): JSX.Element => (
+const TabsCustomStyle = (): JSX.Element => (
   <Content>
     <Tabs
       color="primary"

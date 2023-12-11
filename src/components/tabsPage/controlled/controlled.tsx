@@ -9,7 +9,7 @@ import Content from "@/components/layout/content";
  *
  * @returns {JSX.Element} - The rendered TabsControlled component.
  */
-const TabsControlled = () => {
+const TabsControlled = (): JSX.Element => {
   const [selectedKey, setSelectedKey] = useState<string | null>("music");
 
   return (

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { Tabs, Tab } from "@/lib/components/tab";
 import { GalleryIcon, MusicIcon, VideoIcon } from "@/lib/components/icons";
 import Content from "@/components/layout/content";
@@ -8,7 +8,7 @@ import Content from "@/components/layout/content";
  *
  * @returns {JSX.Element} The TabsWithIcon component.
  */
-const TabsWithIcon: FC = (): JSX.Element => (
+const TabsWithIcon = (): JSX.Element => (
   <Content>
     <Tabs color="primary" variant="bordered">
       <Tab

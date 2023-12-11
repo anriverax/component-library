@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { tabsData } from "../tabContent";
 import { TabItem } from "@/lib/components/tab/types-tabs";
 import { Tabs, Tab } from "@/lib/components/tab";
@@ -9,7 +9,7 @@ import Content from "@/components/layout/content";
  *
  * @returns {JSX.Element} - The rendered TabsDynamic component.
  */
-const TabsDynamic: FC = (): JSX.Element => (
+const TabsDynamic = (): JSX.Element => (
   <Content>
     <Tabs items={tabsData}>
       {(item: TabItem) => (

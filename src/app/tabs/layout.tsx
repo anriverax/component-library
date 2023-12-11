@@ -11,7 +11,7 @@ interface RootLayoutProps {
  * @param {RootLayoutProps} props - The props for the RootLayout component.
  * @returns {JSX.Element} The RootLayout component.
  */
-const RootLayout: React.FC<RootLayoutProps> = ({ children }: RootLayoutProps): JSX.Element => (
+const RootLayout = ({ children }: RootLayoutProps): JSX.Element => (
   <div className="grid grid-cols-10 gap-4">
     {/* Main Content */}
     <div className="col-span-8 mt-5">{children}</div>

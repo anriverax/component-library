@@ -1,4 +1,4 @@
-import React, { ReactNode, FC } from "react";
+import React, { ReactNode } from "react";
 
 /**
  * Props for the Content component.
@@ -16,7 +16,7 @@ interface ContentProps {
  * @param {ContentProps} props - The props for the Content component.
  * @returns {JSX.Element} The Content component.
  */
-const Content: FC<ContentProps> = ({ children }: ContentProps): JSX.Element => (
+const Content = ({ children }: ContentProps): JSX.Element => (
   <div className="p-5 border border-default-100 rounded-md flex flex-wrap gap-2">{children}</div>
 );
 

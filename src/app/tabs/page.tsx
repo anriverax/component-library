@@ -17,7 +17,7 @@ import { tabsCollection } from "@/components/tabsPage/types-tabs";
  * Renders a scrollable container with tabs based on the provided collections.
  * @returns {JSX.Element} The rendered TabsPage component.
  */
-const TabsPage: React.FC = (): JSX.Element => {
+const TabsPage = (): JSX.Element => {
   /**
    * Renders an individual tab based on the provided item.
    * @param {TabItem} item - The tab item to be rendered.

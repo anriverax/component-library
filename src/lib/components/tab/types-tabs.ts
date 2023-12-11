@@ -9,6 +9,7 @@ export type TabItem = {
   id: number | string;
   title: string;
   content?: string | ReactNode;
+  item?: ReactNode;
 };
 
 /**
@@ -71,4 +72,63 @@ export interface TabPanelProps
     Pick<TabContentProps, "slots">,
     Pick<ControllerSelectedKeyProps, "selectedKey"> {
   renderChildren: ReactNode;
+}
+
+/**
+ * Object containing properties for the base slot.
+ */
+interface BaseSlotProps {
+  "data-slot": string;
+}
+
+/**
+ * Object containing properties for the tab button.
+ */
+export interface TabListButtonProps extends BaseSlotProps {
+  className: string | undefined;
+  "data-disable": boolean | undefined;
+  "data-hover": boolean | undefined;
+  "data-selected": boolean | undefined;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+}
+
+/**
+ * Object containing properties for the motion span.
+ */
+export interface MotionSpanProps extends BaseSlotProps {
+  className: string | undefined;
+  layoutDependency: boolean;
+  layoutId: string;
+  transition: {
+    type: string;
+    bounce: number;
+    duration: number;
+  };
+}
+
+/**
+ * Object containing functions and values for managing tab behavior.
+ */
+export interface TabHookResult {
+  getSelecteItem: boolean;
+  getTabListBtn: () => TabListButtonProps; // Corrected function return type
+  getMotionSpan: () => MotionSpanProps;
+}
+
+/**
+ * Object containing properties for the tab list slot.
+ */
+export interface TabListSlotProps extends BaseSlotProps {
+  className: string;
+}
+
+/**
+ * Object containing properties and functions for managing tabs.
+ */
+export interface TabsHookResult {
+  myCollection: TabItem[];
+  getBaseProps: () => TabListSlotProps;
+  getTabListProps: () => TabListSlotProps;
+  slots: TabsReturnType;
 }

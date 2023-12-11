@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { FC } from "react";
+import React from "react";
 
 /**
  * Represents a navigation item with a path and title.
@@ -38,7 +38,7 @@ const generateNavLink = (href: string, label: string): JSX.Element => (
  * @param {SideBarTabsProps} props - The props for the SideBarTabs component.
  * @returns {JSX.Element} The SideBarTabs component.
  */
-const SideBarTabs: FC<SideBarTabsProps> = ({ items }: SideBarTabsProps): JSX.Element => (
+const SideBarTabs = ({ items }: SideBarTabsProps): JSX.Element => (
   <aside className="fixed">
     <p className="font-bold text-black">On this page</p>
     <br />
@@ -66,6 +66,6 @@ const defaultItems: NavigationItem[] = [
 ];
 
 // Default export with sample items
-const DefaultSideBarTabs: FC = (): JSX.Element => <SideBarTabs items={defaultItems} />;
+const DefaultSideBarTabs = (): JSX.Element => <SideBarTabs items={defaultItems} />;
 
 export default DefaultSideBarTabs;

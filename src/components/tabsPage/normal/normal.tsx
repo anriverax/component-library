@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { tabsData } from "../tabContent";
 import { Tabs, Tab } from "@/lib/components/tab";
 import Content from "@/components/layout/content";
@@ -9,7 +9,7 @@ import { TabItem } from "@/lib/components/tab/types-tabs";
  *
  * @returns {JSX.Element} The TabsNormal component.
  */
-const TabsNormal: FC = (): JSX.Element => (
+const TabsNormal = (): JSX.Element => (
   <Content>
     <Tabs items={tabsData}>
       {(item: TabItem) => (

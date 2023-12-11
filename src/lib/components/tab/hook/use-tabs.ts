@@ -1,12 +1,19 @@
 import { Children, useMemo, useCallback } from "react";
 import { tabVariants } from "../theme/theme-tab";
-import { UseTabsProps } from "../types-tabs";
+import { UseTabsProps, TabItem, TabsHookResult } from "../types-tabs";
 
-const useTabs = (props: UseTabsProps) => {
+/**
+ * Hook for managing tab behavior.
+ *
+ * @param {UseTabsProps} props - The properties for the tabs.
+ * @returns {TabsHookResult} - Object containing properties and functions for managing tabs.
+ */
+
+const useTabs = (props: UseTabsProps): TabsHookResult => {
   const { items, classNames, children, color, variant, size, radius, fullWidth, isDisabled } = props;
   /* eslint-disable */
   const myCollection = useMemo(() => {
-    const data: { id: string | number; title: string }[] = [];
+    const data: TabItem[] = [];
 
     if (!items) {
       Children.toArray(children as React.ReactNode).forEach((child: any) => {
@@ -16,12 +23,17 @@ const useTabs = (props: UseTabsProps) => {
     }
     return data;
   }, [children]);
-  /* eslint-enable */
+
   const slots = useMemo(
     () => tabVariants({ color, variant, size, radius, fullWidth, isDisabled }),
     [color, variant, size, radius, fullWidth, isDisabled]
   );
 
+  /**
+   * Retrieves properties for the base slot.
+   *
+   * @returns {BaseSlotProps} - Object containing properties for the base slot.
+   */
   const getBaseProps = useCallback(
     () => ({
       "data-slot": "base",
@@ -30,6 +42,11 @@ const useTabs = (props: UseTabsProps) => {
     [slots, classNames]
   );
 
+  /**
+   * Retrieves properties for the tab list slot.
+   *
+   * @returns {TabListSlotProps} - Object containing properties for the tab list slot.
+   */
   const getTabListProps = useCallback(
     () => ({
       "data-slot": "tabList",

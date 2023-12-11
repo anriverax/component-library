@@ -1,6 +1,9 @@
 import type { VariantProps } from "tailwind-variants";
 import { tv } from "@/lib/utils/tv";
 
+/**
+ * Variants and styles for the Tabs component.
+ */
 const tabVariants = tv({
   slots: {
     base: "flex",
@@ -225,8 +228,19 @@ const tabVariants = tv({
   ]
 });
 
+/**
+ * Type definition for variant props used in Tabs.
+ */
 export type TabsVariantProps = VariantProps<typeof tabVariants>;
+
+/**
+ * Type definition for slots used in Tabs.
+ */
 export type TabsSlots = keyof ReturnType<typeof tabVariants>;
+
+/**
+ * Type definition for the return type of tabVariants.
+ */
 export type TabsReturnType = ReturnType<typeof tabVariants>;
 
 export { tabVariants };

@@ -1,28 +1,27 @@
-import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
-import { RippleType } from "./types-ripple";
+import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { RippleProps } from "./types-ripple";
 
-/* eslint-disable */
-export interface RippleProps {
-  ripples: RippleType[];
-  /**
-   * @default undefined
-   */
-  color?: string;
-  /**
-   * @default undefined
-   */
-  motionProps?: HTMLMotionProps<"span">;
-  /**
-   * @default undefined
-   */
-  style?: React.CSSProperties;
-}
+/**
+ * Clamp a value between a minimum and maximum.
+ * @param value - The value to clamp.
+ * @param min - The minimum value.
+ * @param max - The maximum value.
+ * @returns The clamped value.
+ */
+const clamp = (value: number, min: number, max: number): number => Math.min(Math.max(value, min), max);
 
-/* eslint-enable */
-
-const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
-
-const Ripple = ({ ripples = [], motionProps, color = "currentColor", style }: RippleProps) => (
+/**
+ * Ripple component that displays animated ripples.
+ * @param {RippleProps} props - The component props.
+ * @returns {JSX.Element} - The rendered Ripple component.
+ */
+const Ripple = ({
+  ripples = [],
+  motionProps,
+  color = "currentColor",
+  style
+}: RippleProps): JSX.Element => (
   <span>
     {ripples.map((ripple) => {
       const duration = clamp(0.01 * ripple.size, 0.2, ripple.size > 100 ? 0.75 : 0.5);

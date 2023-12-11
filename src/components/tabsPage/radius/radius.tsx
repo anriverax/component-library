@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React from "react";
 import { Tabs, Tab } from "@/lib/components/tab";
 import Content from "@/components/layout/content";
 
 // Define the possible radius values
 type RadiusType = "none" | "sm" | "md" | "lg" | "full";
 
-const TabsRadius: FC = () => {
+const TabsRadius = (): JSX.Element => {
   // List of available radius values
   const radiusList: RadiusType[] = ["none", "sm", "md", "lg", "full"];
 

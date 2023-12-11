@@ -1,4 +1,20 @@
-export const colorVariants = {
+/**
+ * A collection of color variants for different styles.
+ */
+export interface ColorVariants {
+  default: string;
+  primary: string;
+  secondary: string;
+  info: string;
+  success: string;
+  warning: string;
+  danger: string;
+}
+
+/**
+ * Object containing CSS classes for various color variants.
+ */
+export const colorVariants: ColorVariants = {
   default: "bg-default-100 text-default-800 active:bg-default-100",
   primary: "text-white bg-primary-500",
   secondary: "bg-secondary-700 text-white active:bg-secondary-800 hover:bg-secondary-800",

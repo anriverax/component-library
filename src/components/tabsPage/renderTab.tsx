@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { Tab } from "@/lib/components/tab";
 import { TabItem } from "@/lib/components/tab/types-tabs";
 
@@ -18,9 +18,7 @@ interface DynamicTabsContentProps {
  * @param {DynamicTabsContentProps} props - The props for the DynamicTabsContent component.
  * @returns {JSX.Element} The content for the tab.
  */
-const DynamicTabsContent: FC<DynamicTabsContentProps> = ({
-  item
-}: DynamicTabsContentProps): JSX.Element => (
+const DynamicTabsContent = ({ item }: DynamicTabsContentProps): JSX.Element => (
   <section>
     <div>{item.content}</div>
   </section>

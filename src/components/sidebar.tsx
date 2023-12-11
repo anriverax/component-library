@@ -4,7 +4,7 @@ import Link from "next/link";
  * Sidebar component displaying a list of components with links.
  * @returns {JSX.Element} The Sidebar component.
  */
-const Sidebar: React.FC = (): JSX.Element => (
+const Sidebar = (): JSX.Element => (
   <aside>
     <ul className="space-y-2 text-default-500">
       <li className="bold text-black">Components</li>

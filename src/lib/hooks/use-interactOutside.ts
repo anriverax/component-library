@@ -1,18 +1,26 @@
-import { useEffect } from "react";
+import { RefObject, useEffect } from "react";
 
-/* eslint-disable */
-export const useInteractOutside = (ref: any, callback: any) => {
+/**
+ * A custom hook to handle interactions outside a specified element.
+ * @param ref - Reference to the element for which interactions outside are tracked.
+ * @param callback - Callback function to be invoked when an interaction outside the element occurs.
+ */
+export const useInteractOutside = (ref: RefObject<HTMLElement>, callback: () => void): void => {
   useEffect(() => {
-    function handleClickOutside(event: any) {
-      if (ref.current && !ref.current.contains(event.target)) {
+    /**
+     * Handles the click outside the specified element.
+     * @param event - The click event.
+     */
+    function handleClickOutside(event: MouseEvent): void {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
         callback();
       }
     }
 
-    // Agregar el event listener cuando el componente se monta
+    // Add the event listener when the component is mounted
     document.addEventListener("click", handleClickOutside);
 
-    // Eliminar el event listener cuando el componente se desmonta
+    // Remove the event listener when the component is unmounted
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };

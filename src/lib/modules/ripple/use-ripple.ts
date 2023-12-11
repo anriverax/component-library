@@ -1,22 +1,19 @@
 import { useCallback, useEffect, useState } from "react";
-import { RippleType } from "./types-ripple";
+import { RippleHookResult, RippleType, UseRippleProps } from "./types-ripple";
 
-interface UseRippleProps {
-  /**
-   * @default 1000
-   */
-  removeAfter?: number;
-}
-
-export const useRipple = ({ removeAfter = 1000 }: UseRippleProps = {}) => {
+/**
+ * A custom hook for handling ripples.
+ * @param removeAfter - The time in milliseconds after which each ripple should be removed.
+ * @returns An object containing the array of ripples and an event handler to trigger ripples.
+ */
+export const useRipple = ({ removeAfter = 1000 }: UseRippleProps = {}): RippleHookResult => {
   const [ripples, setRipples] = useState<RippleType[]>([]);
 
   useEffect(() => {
-    const timeoutIds = ripples.map(
-      (_, i) =>
-        setTimeout(() => {
-          setRipples((prevState) => prevState.filter((_, index) => index !== i));
-        }, removeAfter) // remove after 1s
+    const timeoutIds = ripples.map((_, i) =>
+      setTimeout(() => {
+        setRipples((prevState) => prevState.filter((_, index) => index !== i));
+      }, removeAfter)
     );
 
     return () => {
@@ -24,6 +21,10 @@ export const useRipple = ({ removeAfter = 1000 }: UseRippleProps = {}) => {
     };
   }, [ripples, removeAfter]);
 
+  /**
+   * Event handler for triggering ripples.
+   * @param event - The mouse event that triggered the ripple.
+   */
   const onClick = useCallback((event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     const trigger = event.currentTarget;
 

@@ -21,7 +21,7 @@ interface CodeViewerProps {
  * @param {CodeViewerProps} props - The props for the CodeViewer component.
  * @returns {JSX.Element} The CodeViewer component.
  */
-const CodeViewer: React.FC<CodeViewerProps> = ({ code }: CodeViewerProps): JSX.Element => {
+const CodeViewer = ({ code }: CodeViewerProps): JSX.Element => {
   const [isExpanded, setExpanded] = useState<boolean>(false);
   const [isCopied, setCopied] = useState<boolean>(false);
   const codeMirrorRef = useRef<ReactCodeMirrorRef>(null);

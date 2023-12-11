@@ -95,7 +95,7 @@ const data: TabsProps[] = [
  * // Usage in another component
  * <TabsProps />
  */
-const TabsProps: React.FC = () => (
+const TabsProps = (): JSX.Element => (
   <table className="border-collapse border-spacing-0 w-full">
     <thead className="text-left [&>tr>th:first-child]:rounded-l-lg [&>tr>th:last-child]:rounded-r-lg [&>tr>th]:pl-2 text-sm h-12 align-middle bg-default-100">
       <tr>

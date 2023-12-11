@@ -1,28 +1,54 @@
-import type { Target, TargetAndTransition, Transition } from "framer-motion";
+import { Target, TargetAndTransition, Transition } from "framer-motion";
 
-/* eslint-disable */
+/**
+ * A partial record representing motion states (enter and exit).
+ * @template P - Additional properties for motion states.
+ */
 type WithMotionState<P> = Partial<Record<"enter" | "exit", P>>;
 
+/**
+ * Configuration for motion transition.
+ */
 export type TransitionConfig = WithMotionState<Transition>;
 
+/**
+ * Configuration for motion transition end.
+ */
 export type TransitionEndConfig = WithMotionState<Target>;
 
+/**
+ * Properties related to motion transitions.
+ */
 export type TransitionProperties = {
   /**
-   * Custom `transition` definition for `enter` and `exit`
+   * Custom `transition` definition for `enter` and `exit`.
    */
   transition?: TransitionConfig;
   /**
-   * Custom `transitionEnd` definition for `enter` and `exit`
+   * Custom `transitionEnd` definition for `enter` and `exit`.
    */
   transitionEnd?: TransitionEndConfig;
 };
 
-type TargetResolver<P = {}> = (props: P & TransitionProperties) => TargetAndTransition;
+/**
+ * A function that resolves the target and transition based on provided properties.
+ * @template P - Additional properties for the resolver.
+ */
+type TargetResolver<P = Record<string, never>> = (
+  props: P & TransitionProperties
+) => TargetAndTransition;
 
-type Variant<P = {}> = TargetAndTransition | TargetResolver<P>;
+/**
+ * A variant that can be either a target and transition or a resolver function.
+ * @template P - Additional properties for the variant.
+ */
+type Variant<P = Record<string, never>> = TargetAndTransition | TargetResolver<P>;
 
-export type Variants<P = {}> = Record<
+/**
+ * A record of variants, each having enter and exit states.
+ * @template P - Additional properties for the variants.
+ */
+export type Variants<P = Record<string, never>> = Record<
   string,
   {
     enter: Variant<P>;
@@ -31,6 +57,9 @@ export type Variants<P = {}> = Record<
   }
 >;
 
+/**
+ * A constant object representing various transition easings.
+ */
 export const TRANSITION_EASINGS = {
   ease: [0.36, 0.66, 0.4, 1],
   easeIn: [0.4, 0, 1, 1],
@@ -41,6 +70,9 @@ export const TRANSITION_EASINGS = {
   softSpring: [0.16, 1.11, 0.3, 1.02]
 } as const;
 
+/**
+ * Default transition properties for enter and exit states.
+ */
 export const TRANSITION_DEFAULTS = {
   enter: {
     duration: 0.2,
@@ -52,6 +84,9 @@ export const TRANSITION_DEFAULTS = {
   }
 } as const;
 
+/**
+ * A set of predefined transition variants.
+ */
 export const TRANSITION_VARIANTS: Variants = {
   scaleSpring: {
     enter: {

@@ -6,9 +6,17 @@ import TabContent from "./tabContent";
 import { TabItem, UseTabsProps, ControllerSelectedKeyProps } from "./types-tabs";
 import TabPanel from "./tabPanel";
 
+/**
+ * Props for the Tabs component.
+ */
 type TabsProps = UseTabsProps & ControllerSelectedKeyProps;
 
-const Tabs = (props: TabsProps) => {
+/**
+ * A component for managing and rendering tabs.
+ * @param props - The Tabs component props.
+ * @returns The Tabs component.
+ */
+const Tabs = (props: TabsProps): JSX.Element => {
   const { selectedKey, onSelectionChange, ...otherProps } = props;
 
   const { getBaseProps, getTabListProps, slots, myCollection } = useTabs(otherProps);
@@ -18,7 +26,7 @@ const Tabs = (props: TabsProps) => {
   const { handleClick, currentSelectedKey, renderChildren } = useTabSelected({
     selectedKey,
     onSelectionChange,
-    items: !items ? (myCollection as TabItem[]) : items,
+    items: !items ? myCollection : items,
     disabledKeys,
     children,
     isFunction: !!items

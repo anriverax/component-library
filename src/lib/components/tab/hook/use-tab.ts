@@ -1,14 +1,14 @@
 import { useCallback, useMemo, useState } from "react";
-import { UseTabProps } from "../types-tabs";
+import { MotionSpanProps, TabHookResult, TabListButtonProps, UseTabProps } from "../types-tabs";
 import { dataAttr } from "@/lib/utils/assertion";
 
 /**
  * Hook for managing tab behavior.
  *
- * @param props - The properties for the tab.
- * @returns Object containing functions and values for managing tab behavior.
+ * @param {UseTabProps} props - The properties for the tab.
+ * @returns {TabHookResult} - Object containing functions and values for managing tab behavior.
  */
-const useTab = (props: UseTabProps) => {
+const useTab = (props: UseTabProps): TabHookResult => {
   const [isHovered, setHovered] = useState<boolean>(false);
 
   const { item, selectedKey, classNames, slots, isDisable } = props;
@@ -29,10 +29,10 @@ const useTab = (props: UseTabProps) => {
   /**
    * Retrieves properties for the tab button.
    *
-   * @returns Object containing properties for the tab button.
+   * @returns {TabListButtonProps} - Object containing properties for the tab button.
    */
   const getTabListBtn = useCallback(
-    (): Record<string, unknown> => ({
+    (): TabListButtonProps => ({
       className: slots?.tab({ class: classNames?.tab }),
       "data-slot": "tab",
       "data-disable": isDisable,
@@ -44,8 +44,13 @@ const useTab = (props: UseTabProps) => {
     [slots, classNames, isHovered, getSelecteItem, isDisable, handleMouseEnter]
   );
 
+  /**
+   * Retrieves properties for the motion span.
+   *
+   * @returns {MotionSpanProps} - Object containing properties for the motion span.
+   */
   const getMotionSpan = useCallback(
-    (): Record<string, unknown> => ({
+    (): MotionSpanProps => ({
       className: slots?.cursor({ class: classNames?.cursor }),
       "data-slot": "cursor",
       layoutDependency: false,

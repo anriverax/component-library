@@ -10,7 +10,7 @@ type TabVariant = "solid" | "underlined" | "bordered" | "light";
  *
  * @returns {JSX.Element} The TabsVariants component.
  */
-const TabsVariants: React.FC = () => {
+const TabsVariants = (): JSX.Element => {
   // List of tab variants
   const variantList: TabVariant[] = ["solid", "underlined", "bordered", "light"];
 

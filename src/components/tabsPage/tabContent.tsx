@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { TabItem } from "@/lib/components/tab/types-tabs";
 
 /**
@@ -7,7 +7,7 @@ import { TabItem } from "@/lib/components/tab/types-tabs";
  * @param {string} text - The content text.
  * @returns {JSX.Element} - The rendered tab content.
  */
-const TabContent: FC<{ text: string }> = ({ text }) => (
+const TabContent = ({ text }: { text: string }) => (
   <section>
     <div>{text}</div>
   </section>

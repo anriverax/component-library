@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { Tabs, Tab } from "@/lib/components/tab";
 import Content from "@/components/layout/content";
 
@@ -14,7 +14,7 @@ type TabSize = "sm" | "md" | "lg";
  * // Usage of TabsSize component:
  * <TabsSize />
  */
-const TabsSize: FC = (): JSX.Element => {
+const TabsSize = (): JSX.Element => {
   /**
    * List of tab sizes.
    *
