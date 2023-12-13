@@ -1,5 +1,5 @@
 /**
- * A collection of color variants for different styles.
+ * Represents the color variants for different button styles.
  */
 export interface ColorVariants {
   default: string;
@@ -12,7 +12,7 @@ export interface ColorVariants {
 }
 
 /**
- * Object containing CSS classes for various color variants.
+ * Color variants for solid backgrounds.
  */
 export const colorVariants: ColorVariants = {
   default: "bg-default-100 text-default-800 active:bg-default-100",

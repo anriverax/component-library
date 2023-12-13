@@ -6,9 +6,9 @@ import Content from "@/components/layout/content";
 /**
  * CustomTabContent component to render the content of each custom tab.
  * @param {string} title - The title of the tab.
- * @returns {JSX.Element} - The rendered CustomTabContent component.
+ * @returns {React.JSX.Element} - The rendered CustomTabContent component.
  */
-const CustomTabContent = ({ title, icon }: { title: string; icon: ReactNode }): JSX.Element => (
+const CustomTabContent = ({ title, icon }: { title: string; icon: ReactNode }): React.JSX.Element => (
   <div className="flex items-center space-x-2">
     {icon}
     <span>{title}</span>
@@ -18,9 +18,9 @@ const CustomTabContent = ({ title, icon }: { title: string; icon: ReactNode }): 
 /**
  * TabsCustomStyle component for displaying tabs with custom styling.
  *
- * @returns {JSX.Element} - The rendered TabsCustomStyle component.
+ * @returns {React.JSX.Element} - The rendered TabsCustomStyle component.
  */
-const TabsCustomStyle = (): JSX.Element => (
+const TabsCustomStyle = (): React.JSX.Element => (
   <Content>
     <Tabs
       color="primary"

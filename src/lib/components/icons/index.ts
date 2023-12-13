@@ -12,3 +12,6 @@ export { CheckIcon } from "./check";
 export { GalleryIcon } from "./gallery-icon";
 export { MusicIcon } from "./music-icon";
 export { VideoIcon } from "./video-icon";
+export { CameraIcon } from "./camara-icon";
+export { UserIcon } from "./user-icon";
+export { HeartIcon } from "./heart-icon";

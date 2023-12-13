@@ -7,9 +7,9 @@ import { TabItem } from "@/lib/components/tab/types-tabs";
 /**
  * TabsNormal component for displaying tabs with different content.
  *
- * @returns {JSX.Element} The TabsNormal component.
+ * @returns {React.JSX.Element} The TabsNormal component.
  */
-const TabsNormal = (): JSX.Element => (
+const TabsNormal = (): React.JSX.Element => (
   <Content>
     <Tabs items={tabsData}>
       {(item: TabItem) => (

@@ -1,9 +1,19 @@
+import { ButtonColors } from "../types-button";
 import { colorVariants } from "@/lib/utils/colorsVariants";
 
-export const colors = {
+/**
+ * Represents different color styles for buttons.
+ */
+export const colors: ButtonColors = {
+  /**
+   * Solid color variants.
+   */
   solid: {
     ...colorVariants
   },
+  /**
+   * Bordered color variants.
+   */
   bordered: {
     default: "text-default-300 border-default-300",
     primary: "text-primary-500 border-primary-500",
@@ -13,6 +23,9 @@ export const colors = {
     warning: "text-warning-500 border-warning-500",
     danger: "text-danger-500 border-danger-500"
   },
+  /**
+   * Light color variants.
+   */
   light: {
     default: "text-default-800 active:bg-default-100 hover:bg-default-100",
     primary: "text-primary-500 active:bg-primary-600 hover:bg-primary-600 hover:text-white",
@@ -22,6 +35,9 @@ export const colors = {
     warning: "text-warning-900 active:bg-warning-400 hover:bg-warning-400",
     danger: "text-danger-900 active:bg-danger-400 hover:bg-danger-400"
   },
+  /**
+   * Flat color variants.
+   */
   flat: {
     default: "bg-default-100/40 text-default-800/40",
     primary: "bg-primary-500/20 text-black/40",
@@ -31,6 +47,9 @@ export const colors = {
     warning: "bg-warning-500/20 text-black/40",
     danger: "bg-danger-500/20 text-black/40"
   },
+  /**
+   * Shadowed color variants.
+   */
   shadow: {
     default: "shadow-lg shadow-default-200/50 bg-default-100 text-default-800 active:bg-default-100",
     primary:
@@ -45,6 +64,9 @@ export const colors = {
     danger:
       "shadow-lg shadow-danger-500/40 bg-danger-500 text-danger-100 active:bg-danger-400 hover:bg-danger-400 hover:shadow-danger-400/40"
   },
+  /**
+   * Ghost color variants.
+   */
   ghost: {
     default:
       "text-default-300 border-default-300 active:bg-default-100 active:text-default-800 active:border-default-100 hover:bg-default-100 hover:text-default-800 hover:border-default-100",

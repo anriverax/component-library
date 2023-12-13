@@ -1,6 +1,10 @@
 import { compoundVariants } from "./variants";
 import { tv, VariantProps } from "@/lib/utils/tv";
 
+/**
+ * Represents the configuration for button variants using the `tv` utility.
+ */
+
 const buttonVariants = tv({
   base: "relative font-semibold overflow-hidden cursor-pointer outline-none select-none whitespace-nowrap flex items-center justify-center transition-colors duration-500 ease-in",
   variants: {
@@ -26,6 +30,7 @@ const buttonVariants = tv({
       default: "rounded",
       sm: "rounded-sm",
       md: "rounded-md",
+      lg: "rounded-lg",
       full: "rounded-full"
     },
     size: {
@@ -49,10 +54,17 @@ const buttonVariants = tv({
     size: "md",
     color: "default"
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  compoundVariants: [...compoundVariants]
+  compoundVariants: compoundVariants
 });
 
+/**
+ * Represents the button variant properties using the `tv` utility.
+ */
 export type ButtonVariantProps = VariantProps<typeof buttonVariants>;
+
+/**
+ * Type definition for the return type of buttonVariants.
+ */
+export type ButtonReturnType = ReturnType<typeof buttonVariants>;
 
 export { buttonVariants };

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/sidebar/sidebarLeft";
 
 // Import the Inter font with the Latin subset
 const inter = Inter({ subsets: ["latin"] });
@@ -18,10 +18,10 @@ export const metadata: Metadata = {
  * Root layout component.
  *
  * @param {ReactNode} children - The content to be rendered within the layout.
- * @returns {JSX.Element}
+ * @returns {React.JSX.Element}
  */
 
-export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
+export default function RootLayout({ children }: { children: React.ReactNode }): React.JSX.Element {
   return (
     <html lang="en">
       <body className={inter.className}>

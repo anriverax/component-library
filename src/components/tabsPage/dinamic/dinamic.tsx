@@ -7,9 +7,9 @@ import Content from "@/components/layout/content";
 /**
  * TabsDynamic component for displaying dynamic tabs with different content.
  *
- * @returns {JSX.Element} - The rendered TabsDynamic component.
+ * @returns {React.JSX.Element} - The rendered TabsDynamic component.
  */
-const TabsDynamic = (): JSX.Element => (
+const TabsDynamic = (): React.JSX.Element => (
   <Content>
     <Tabs items={tabsData}>
       {(item: TabItem) => (

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import CodeMirror, { ReactCodeMirrorRef } from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
@@ -19,9 +21,9 @@ interface CodeViewerProps {
  * CodeViewer component for displaying and copying code snippets.
  *
  * @param {CodeViewerProps} props - The props for the CodeViewer component.
- * @returns {JSX.Element} The CodeViewer component.
+ * @returns {React.JSX.Element} The CodeViewer component.
  */
-const CodeViewer = ({ code }: CodeViewerProps): JSX.Element => {
+const CodeViewer = ({ code }: CodeViewerProps): React.JSX.Element => {
   const [isExpanded, setExpanded] = useState<boolean>(false);
   const [isCopied, setCopied] = useState<boolean>(false);
   const codeMirrorRef = useRef<ReactCodeMirrorRef>(null);
@@ -34,7 +36,7 @@ const CodeViewer = ({ code }: CodeViewerProps): JSX.Element => {
     variants: {
       expanded: {
         false: "h-full inset-0 bg-gradient-to-b from-transparent to-default-500",
-        true: "h-10 bottom-0 pb-6 mb-6"
+        true: "bottom-0 pb-6 mb-6"
       }
     },
     defaultVariants: {
@@ -77,6 +79,8 @@ const CodeViewer = ({ code }: CodeViewerProps): JSX.Element => {
     }
   }, [isCopied]);
 
+  const lineCount = code.split("\n").length;
+
   return (
     <Wrapper>
       <div className="relative">
@@ -92,7 +96,8 @@ const CodeViewer = ({ code }: CodeViewerProps): JSX.Element => {
         </div>
         <CodeMirror
           value={code}
-          height={isExpanded ? "600px" : "234px"}
+          height={isExpanded ? "auto" : lineCount > 10 ? "200px" : "auto"}
+          maxHeight="600px"
           theme={githubDarkInit({
             settings: {
               caret: "#f25551",

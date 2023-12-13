@@ -20,10 +20,10 @@ interface WrapperProps {
  *
  * @component
  * @param {WrapperProps} props - The props for the Wrapper component.
- * @returns {JSX.Element} The Wrapper component.
+ * @returns {React.React.JSX.Element} The Wrapper component.
  */
-const Wrapper = ({ children, title = undefined }: WrapperProps): JSX.Element => (
-  <div className="mb-7 pt-4" id={title?.replaceAll(" ", "_").toLowerCase()}>
+const Wrapper = ({ children, title = undefined }: WrapperProps): React.JSX.Element => (
+  <div className="mb-7 pt-4" id={title?.replaceAll(" ", "-").toLowerCase()}>
     {/* Render title if provided */}
     {title ? <h2 className="font-bold text-2xl mb-3">{title}</h2> : null}
     {/* Render children content */}

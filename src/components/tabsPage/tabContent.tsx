@@ -5,7 +5,7 @@ import { TabItem } from "@/lib/components/tab/types-tabs";
  * Component for individual tab content.
  *
  * @param {string} text - The content text.
- * @returns {JSX.Element} - The rendered tab content.
+ * @returns {React.JSX.Element} - The rendered tab content.
  */
 const TabContent = ({ text }: { text: string }) => (
   <section>

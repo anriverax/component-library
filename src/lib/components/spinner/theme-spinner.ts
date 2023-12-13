@@ -2,7 +2,7 @@ import { tv, VariantProps } from "@/lib/utils/tv";
 
 const spinnerVariants = tv({
   slots: {
-    base: "relative inline-flex flex-col gap-2 items-center justify-center",
+    base: "relative inline-flex flex-col gap-2 items-center justify-center mr-[8px]",
     wrapper: "relative flex",
     circle1:
       "absolute w-full h-full rounded-full animate-spin border-solid border-t-transparent border-l-transparent border-r-transparent",
@@ -44,7 +44,7 @@ const spinnerVariants = tv({
     }
   },
   defaultVariants: {
-    size: "md",
+    size: "sm",
     color: "primary"
   }
 });

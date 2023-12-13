@@ -25,9 +25,9 @@ const TabsColors = () => {
    * Renders Tabs component with predefined titles for a specific color.
    *
    * @param {string} color - The color for the Tabs.
-   * @returns {JSX.Element} JSX element for Tabs component.
+   * @returns {React.JSX.Element} JSX element for Tabs component.
    */
-  const renderTabsForColor = (color: string): JSX.Element => (
+  const renderTabsForColor = (color: string): React.JSX.Element => (
     <Tabs key={color} color={color as TabColor}>
       {["Photos", "Music", "Videos"].map((tabTitle) => (
         <Tab key={tabTitle.toLowerCase()} title={tabTitle} />
@@ -38,9 +38,11 @@ const TabsColors = () => {
   /**
    * Renders the entire TabsColor component.
    *
-   * @returns {JSX.Element} JSX element for TabsColor component.
+   * @returns {React.JSX.Element} JSX element for TabsColor component.
    */
-  const renderTabsColor = (): JSX.Element => <Content>{colorList.map(renderTabsForColor)}</Content>;
+  const renderTabsColor = (): React.JSX.Element => (
+    <Content>{colorList.map(renderTabsForColor)}</Content>
+  );
 
   return renderTabsColor();
 };

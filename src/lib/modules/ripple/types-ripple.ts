@@ -1,4 +1,4 @@
-import { HTMLMotionProps } from 'framer-motion';
+import { HTMLMotionProps } from "framer-motion";
 
 /**
  * Represents the configuration for a ripple.

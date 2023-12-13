@@ -10,7 +10,7 @@ const tabVariants = tv({
     tabList: "flex p-1 gap-2 items-center flex-nowrap overflow-hidden bg-default-100",
     tab: "z-0 w-full px-3 py-1 flex group relative justify-center items-center outline-none cursor-pointer transition-opacity data-[disable=true]:pointer-events-none data-[disable=true]:cursor-not-allowed data-[disable=true]:opacity-30",
     tabContent:
-      "relative z-10 whitespace-nowrap transition-colors duration-200 ease-in text-default-500 group-data-[selected=true]:text-default-900 group-data-[hover=true]:text-default-900 group-data-[hover=true]:font-semibold group-data-[disable=true]:pointer-events-none group-data-[disable=true]:!opacity-50",
+      "relative z-10 whitespace-nowrap transition-colors duration-200 ease-in text-default-500 group-data-[selected=true]:text-default-900 group-data-[hover=true]:text-default-900 group-data-[hover=true]:font-medium group-data-[disable=true]:pointer-events-none group-data-[disable=true]:!opacity-50",
     cursor: "absolute z-0 bg-default-300",
     panel: "py-3 px-1 outline-none h-auto"
   },

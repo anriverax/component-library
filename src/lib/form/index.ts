@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * This module re-exports form components.
  * It serves as an entry point for easier importing in other parts of the application.

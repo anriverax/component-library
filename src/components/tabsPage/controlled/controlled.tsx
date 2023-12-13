@@ -7,9 +7,9 @@ import Content from "@/components/layout/content";
 /**
  * TabsControlled component for displaying controlled tabs with dynamic content.
  *
- * @returns {JSX.Element} - The rendered TabsControlled component.
+ * @returns {React.JSX.Element} - The rendered TabsControlled component.
  */
-const TabsControlled = (): JSX.Element => {
+const TabsControlled = (): React.JSX.Element => {
   const [selectedKey, setSelectedKey] = useState<string | null>("music");
 
   return (

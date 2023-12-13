@@ -7,9 +7,9 @@ import Content from "@/components/layout/content";
 /**
  * TabsDisabledItem component to display tabs with a disabled state for specific items.
  *
- * @returns {JSX.Element} - The rendered TabsDisabledItem component.
+ * @returns {React.JSX.Element} - The rendered TabsDisabledItem component.
  */
-const TabsDisabledItem = (): JSX.Element => (
+const TabsDisabledItem = (): React.JSX.Element => (
   <Content>
     {/* Using Tabs component with disabledKeys prop to set specific disabled items */}
     <Tabs disabledKeys={new Set(["music"])} items={tabsData}>

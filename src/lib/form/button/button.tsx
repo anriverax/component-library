@@ -21,7 +21,11 @@ const Button = ({
     onRippleClickHandler
   });
 
-  const currentSpinner = isValidElement(spinner) ?? <Spinner size={props.size} color={props.color} />;
+  const currentSpinner = isValidElement(spinner) ? (
+    spinner
+  ) : (
+    <Spinner size={props.size} color={props.color} />
+  );
 
   /* eslint-disable */
   const renderIconContent = (iconContent: any, style: any) => {
@@ -55,10 +59,10 @@ const Button = ({
       })}
 
       {renderLoading("start", {
-        marginRight: "16px"
+        marginRight: "8px"
       })}
 
-      {isValidElement(children) ? children : props.value}
+      {isValidElement(children) || typeof children === "string" ? children : props.value}
       {renderLoading("end", {
         marginLeft: "16px"
       })}

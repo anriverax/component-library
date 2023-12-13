@@ -16,7 +16,7 @@ type TabsProps = UseTabsProps & ControllerSelectedKeyProps;
  * @param props - The Tabs component props.
  * @returns The Tabs component.
  */
-const Tabs = (props: TabsProps): JSX.Element => {
+const Tabs = (props: TabsProps): React.JSX.Element => {
   const { selectedKey, onSelectionChange, ...otherProps } = props;
 
   const { getBaseProps, getTabListProps, slots, myCollection } = useTabs(otherProps);

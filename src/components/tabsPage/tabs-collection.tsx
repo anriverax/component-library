@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { TabProps, TabsEvents, TabsProps } from "./api";
 import { TabsControlled, codeTabsControlled } from "./controlled";
@@ -208,4 +210,20 @@ export const tabsCollection = [
   { title: "Controlled", component: tabsControlled },
   { title: "Custom Styles", component: tabsCustomStyle },
   { title: "Api", component: apiTabs }
+];
+
+// Default navigation items
+export const defaultItems: NavigationItem[] = [
+  { path: "/tabs", title: "Default" },
+  { path: "/tabs#dynamic", title: "Dynamic" },
+  { path: "/tabs#disabled", title: "Disabled" },
+  { path: "/tabs#disabled-item", title: "Disabled Item" },
+  { path: "/tabs#sizes", title: "Sizes" },
+  { path: "/tabs#radius", title: "Radius" },
+  { path: "/tabs#colors", title: "Colors" },
+  { path: "/tabs#variants", title: "Variants" },
+  { path: "/tabs#with-icons", title: "With Icons" },
+  { path: "/tabs#controlled", title: "Controlled" },
+  { path: "/tabs#custom-styles", title: "Custom Styles" },
+  { path: "/tabs#api", title: "Api" }
 ];

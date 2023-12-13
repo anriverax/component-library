@@ -7,9 +7,9 @@ import Content from "@/components/layout/content";
 /**
  * TabsDisabled component to display disabled tabs.
  *
- * @returns {JSX.Element} - The rendered TabsDisabled component.
+ * @returns {React.JSX.Element} - The rendered TabsDisabled component.
  */
-const TabsDisabled = (): JSX.Element => (
+const TabsDisabled = (): React.JSX.Element => (
   <Content>
     {/* Using Tabs component with isDisabled prop */}
     <Tabs isDisabled items={tabsData}>

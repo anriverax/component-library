@@ -34,10 +34,41 @@ interface ButtonPropsOptional {
 
 /* eslint-enable */
 export interface ButtonProps
-  extends Required<Pick<ButtonHTMLAttributes<HTMLButtonElement>, "value">>,
-    Pick<
+  extends Pick<
       ButtonHTMLAttributes<HTMLButtonElement>,
-      "type" | "disabled" | "name" | "onClick" | "className"
+      "type" | "disabled" | "name" | "onClick" | "className" | "value"
     >,
     ButtonVariantProps,
     ButtonPropsOptional {}
+
+/**
+ * Represents a button variant with its properties.
+ */
+export interface ButtonVariant {
+  variant: "solid" | "light" | "shadow" | "flat" | "bordered" | "ghost";
+  color: "default" | "primary" | "secondary" | "info" | "success" | "warning" | "danger";
+  class: string;
+}
+
+/**
+ * Represents a button with icon properties.
+ */
+export interface IconButton {
+  isIconOnly: boolean;
+  size: "sm" | "md" | "lg";
+  class: string;
+}
+
+export type CompoundVariant = (ButtonVariant | IconButton)[];
+
+/**
+ * Represents color variants for buttons.
+ */
+export interface ButtonColors {
+  solid: Record<string, string>;
+  bordered: Record<string, string>;
+  light: Record<string, string>;
+  flat: Record<string, string>;
+  shadow: Record<string, string>;
+  ghost: Record<string, string>;
+}

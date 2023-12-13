@@ -14,14 +14,14 @@ const clamp = (value: number, min: number, max: number): number => Math.min(Math
 /**
  * Ripple component that displays animated ripples.
  * @param {RippleProps} props - The component props.
- * @returns {JSX.Element} - The rendered Ripple component.
+ * @returns {React.JSX.Element} - The rendered Ripple component.
  */
 const Ripple = ({
   ripples = [],
   motionProps,
   color = "currentColor",
   style
-}: RippleProps): JSX.Element => (
+}: RippleProps): React.JSX.Element => (
   <span>
     {ripples.map((ripple) => {
       const duration = clamp(0.01 * ripple.size, 0.2, ripple.size > 100 ? 0.75 : 0.5);

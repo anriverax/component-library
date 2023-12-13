@@ -6,9 +6,9 @@ import Content from "@/components/layout/content";
 /**
  * TabsWithIcon component demonstrating the usage of Tabs with icons.
  *
- * @returns {JSX.Element} The TabsWithIcon component.
+ * @returns {React.JSX.Element} The TabsWithIcon component.
  */
-const TabsWithIcon = (): JSX.Element => (
+const TabsWithIcon = (): React.JSX.Element => (
   <Content>
     <Tabs color="primary" variant="bordered">
       <Tab
